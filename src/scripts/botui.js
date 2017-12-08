@@ -29,7 +29,9 @@
     var _botApp, // current vue instance.
     _options = {
       debug: false,
-      fontawesome: true
+      fontawesome: true,
+      humanAvatar: 'human.png',
+      botAvatar: 'bot.png'
     },
     _container, // the outermost Element. Needed to scroll to bottom, for now.
     _interface = {}, // methods returned by a BotUI() instance.
@@ -180,6 +182,7 @@
         throw Error('BotUI: "content" is required in a non-loading message object.');
       }
 
+      _msg.avatar = _msg.human ? _options['humanAvatar'] : _options['botAvatar']
       _msg.type = _msg.type || 'text';
       _msg.visible = (_msg.delay || _msg.loading) ? false : true;
       var _index = _instance.messages.push(_msg) - 1;

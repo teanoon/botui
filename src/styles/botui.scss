@@ -27,9 +27,38 @@
   min-height: 20px;
 }
 
+.botui-message-container {
+  display: inline-block;
+  width: 100%;
+  clear: both;
+}
+
+.botui-message-avatar {
+  display: block;
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+
+  &:not(.human) {
+    float: left;
+    margin-right: 2px;
+  }
+
+  &.human {
+    float: right;
+    margin-left: 2px;
+  }
+
+  img {
+    display: inline-block;
+    max-width: 32px;
+    vertical-align: middle;
+  }
+}
+
 .botui-message-content {
   width: auto;
-  max-width: 85%;
+  max-width: 65%;
   display: inline-block;
 
   &.human {
